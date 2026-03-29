@@ -10,7 +10,11 @@ import {
   ChevronRight, 
   Plus, 
   Crown, 
-  FlaskConical 
+  FlaskConical,
+  Award,
+  Percent,
+  GraduationCap,
+  FileBadge
 } from 'lucide-react';
 import { BottomNav } from './BottomNav';
 
@@ -45,36 +49,73 @@ export function ProfilePage({ onTabChange, onAIAssistantClick }: Props) {
         {/* Section 1: Personal Info & Health Profiles */}
         <section className="space-y-4">
           {/* User Base Card */}
-          <div className="relative rounded-3xl p-6 overflow-hidden border border-amber-500/30 shadow-[0_10px_40px_rgba(0,0,0,0.5)] group">
+          <div className="relative rounded-3xl px-4 py-2.5 overflow-hidden border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.5)] group cursor-pointer hover:border-white/20 transition-colors">
+            {/* Dark Glass Background */}
             <div className="absolute inset-0 bg-gradient-to-br from-zinc-900/80 via-black/60 to-zinc-900/80 backdrop-blur-xl"></div>
-            <div className="absolute -top-20 -right-20 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl"></div>
+            {/* Glow / Reflection */}
+            <div className="absolute -top-20 -right-20 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-500/20 transition-colors duration-700"></div>
             
-            <div className="relative z-10 flex items-center gap-5">
-              {/* Avatar */}
-              <div className="relative shrink-0">
-                <div className="w-16 h-16 rounded-full p-[2px] bg-gradient-to-tr from-amber-300 via-amber-500 to-amber-200 shadow-[0_0_15px_rgba(245,158,11,0.5)]">
-                  <img 
-                    src="https://picsum.photos/seed/user-avatar/200/200" 
-                    alt="User Avatar" 
-                    className="w-full h-full rounded-full object-cover border-2 border-black"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-              </div>
-              
-              {/* Info */}
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-1">
-                  <h2 className="text-xl font-bold text-white tracking-wide">李建国</h2>
-                  <div className="flex items-center gap-1 bg-gradient-to-r from-amber-500 to-amber-300 px-2 py-0.5 rounded text-[10px] font-bold text-black shadow-[0_0_10px_rgba(245,158,11,0.3)]">
-                    <Crown className="w-3 h-3" />
-                    高级合伙人
+            <div className="relative z-10">
+              {/* Top Row: Avatar & Info & Progress */}
+              <div className="flex items-center gap-3 mb-2">
+                {/* Avatar */}
+                <div className="relative shrink-0">
+                  <div className="w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-amber-300 via-amber-500 to-amber-200 shadow-[0_0_15px_rgba(245,158,11,0.5)]">
+                    <img 
+                      src="https://picsum.photos/seed/user-avatar/200/200" 
+                      alt="User Avatar" 
+                      className="w-full h-full rounded-full object-cover border-2 border-black"
+                      referrerPolicy="no-referrer"
+                    />
                   </div>
                 </div>
-                <p className="text-white/50 text-sm font-mono tracking-wider">138 **** 8921</p>
+                
+                {/* Info */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between mb-0.5">
+                    <div>
+                      <h2 className="text-white font-bold text-sm tracking-wide flex items-center gap-2 mb-0.5">
+                        李建国
+                      </h2>
+                      <div className="inline-flex items-center gap-1 bg-white/10 text-amber-400 text-[9px] px-1.5 py-0.5 rounded-full border border-amber-500/30 font-medium">
+                        <Award className="w-2.5 h-2.5" />
+                        健康见习生
+                      </div>
+                    </div>
+                    {/* Progress Ring / Status */}
+                    <div className="text-right flex flex-col items-end">
+                      <span className="text-amber-400 font-mono text-xs font-bold">2/5</span>
+                      <span className="text-white/40 text-[9px]">必修课进度</span>
+                    </div>
+                  </div>
+                  
+                  {/* Progress Bar */}
+                  <div className="w-full h-1 bg-black/50 rounded-full overflow-hidden mt-1.5">
+                    <div className="h-full bg-gradient-to-r from-amber-500 to-amber-300 w-[40%] shadow-[0_0_10px_rgba(245,158,11,0.8)] relative">
+                      <div className="absolute inset-0 bg-white/20 animate-[shimmer_2s_linear_infinite]"></div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              
-              <ChevronRight className="w-5 h-5 text-white/30" />
+
+              {/* Bottom Row: Privileges */}
+              <div className="flex items-center justify-between pt-2 border-t border-white/5">
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-1 text-white/60">
+                    <Percent className="w-3 h-3 text-amber-400/70" />
+                    <span className="text-[10px]">内购折扣</span>
+                  </div>
+                  <div className="flex items-center gap-1 text-white/60">
+                    <GraduationCap className="w-3 h-3 text-amber-400/70" />
+                    <span className="text-[10px]">导师辅导</span>
+                  </div>
+                  <div className="flex items-center gap-1 text-white/60">
+                    <FileBadge className="w-3 h-3 text-amber-400/70" />
+                    <span className="text-[10px]">权威认证</span>
+                  </div>
+                </div>
+                <ChevronRight className="w-3.5 h-3.5 text-white/30 group-hover:text-amber-400 transition-colors" />
+              </div>
             </div>
           </div>
 
