@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Phone, ShieldCheck, ArrowRight, User, Crown, CheckCircle2, Circle, X } from 'lucide-react';
+import { Logo } from './Logo';
 
 interface Props {
   onLogin: () => void;
@@ -77,15 +78,10 @@ export function LoginPage({ onLogin, onClose }: Props) {
         <div className="mb-10 text-center">
           <div 
             onClick={onLogin}
-            className="w-20 h-20 mx-auto bg-white rounded-full p-1 mb-6 shadow-[0_0_30px_rgba(255,255,255,0.2)] overflow-hidden cursor-pointer hover:scale-110 hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transition-all duration-300"
+            className="w-20 h-20 mx-auto bg-white rounded-full p-1 mb-6 shadow-[0_0_30px_rgba(255,255,255,0.2)] overflow-hidden cursor-pointer hover:scale-110 hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transition-all duration-300 flex items-center justify-center"
             title="点击直接进入主页"
           >
-            <img 
-              src="https://lh3.googleusercontent.com/aida/ADBb0uji5sZnHnwN0KPu9rCAxC11G1C2XdaKLtm3T4lbWWfWtDPf7kCMSInE7Nm8-g8UbVoFOjOuj1FF-iInLItQ3pN2o9AwLbxMAb2Edgz3-6eAuNFcuk2Lu5VaUZvOz8oy6OPyhFkks1bLhkSiKaje2kTojWkEl7-xQhkd0AfOlfXIVVQ3oD5ycY66MpfSIvLRu_0ma6MBxBpCMqCo8N0DvJqxhvwspKwOR93OiAfcI90MUf2CyRrv0ZBJZnCmMkgWJCUNYFj2q8O2Cw" 
-              alt="TRUPEAK Logo" 
-              className="w-full h-full object-cover rounded-full"
-              referrerPolicy="no-referrer"
-            />
+            <Logo className="w-full h-full rounded-full" />
           </div>
           <h1 className="font-headline text-3xl font-bold text-white tracking-tight mb-2">
             欢迎来到 TRUPEAK

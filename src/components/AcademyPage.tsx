@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Bell, Crown, ChevronRight, PlayCircle, Image as ImageIcon, Users, MessageSquareText, Coins, TrendingUp, Award, Percent, GraduationCap, FileBadge, Lock, Share2, Contact, X, ArrowRight, Tag, CheckCircle2, CircleDashed, ChevronLeft, QrCode, BarChart3, IdCard, UserCheck } from 'lucide-react';
+import { Bell, Crown, ChevronRight, PlayCircle, Image as ImageIcon, Users, MessageSquareText, Coins, TrendingUp, Award, Percent, GraduationCap, FileBadge, Lock, Share2, Contact, X, ArrowRight, Tag, CheckCircle2, CircleDashed, ChevronLeft, QrCode, BarChart3, IdCard, UserCheck, FileText, Download } from 'lucide-react';
 import { BottomNav } from './BottomNav';
 import { Header } from './Header';
 
@@ -216,7 +216,7 @@ export function AcademyPage({ onTabChange, onLoginClick, onHomeClick, onAIAssist
         <section className="px-1">
           <button 
             onClick={() => setShowTaskModal(true)}
-            className="w-full group relative overflow-hidden rounded-full shadow-[0_0_20px_rgba(16,185,129,0.2)] hover:shadow-[0_0_30px_rgba(16,185,129,0.4)] transition-all duration-300 hover:scale-[1.02] active:scale-95 bg-emerald-500/20 backdrop-blur-xl border border-emerald-500/30"
+            className="w-full group relative overflow-hidden rounded-full shadow-[0_0_20px_rgba(16,185,129,0.2)] hover:shadow-[0_0_30px_rgba(16,185,129,0.4)] transition-all duration-300 hover:scale-[1.02] active:scale-95 bg-[rgba(16,185,129,0.15)] backdrop-blur-2xl border border-[rgba(16,185,129,0.3)]"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/0 via-emerald-400/20 to-emerald-400/0 bg-[length:200%_auto] animate-[shimmer_3s_linear_infinite]"></div>
             <div className="relative py-4 px-6 flex items-center justify-center gap-2">
@@ -528,6 +528,25 @@ export function AcademyPage({ onTabChange, onLoginClick, onHomeClick, onAIAssist
                 </p>
               </div>
 
+              {/* Course Materials Card */}
+              <div className="p-5 rounded-3xl bg-[rgba(255,255,255,0.08)] backdrop-blur-2xl border border-[rgba(255,255,255,0.15)] shadow-lg">
+                <h2 className="text-lg font-bold text-white mb-4">课程资料</h2>
+                <div className="flex items-center justify-between bg-white/5 rounded-2xl p-4 border border-white/5 hover:bg-white/10 transition-colors cursor-pointer group">
+                  <div className="flex items-center gap-4 overflow-hidden">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-500/20 to-rose-500/20 flex items-center justify-center border border-red-500/20 shrink-0">
+                      <FileText className="w-5 h-5 text-red-400" />
+                    </div>
+                    <div className="overflow-hidden">
+                      <div className="text-white font-medium text-sm mb-0.5 group-hover:text-red-400 transition-colors truncate">{selectedCourse.title} - 核心讲义.pdf</div>
+                      <div className="text-white/40 text-xs">PDF · 2.4 MB</div>
+                    </div>
+                  </div>
+                  <div className="w-8 h-8 shrink-0 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-red-500/20 transition-colors ml-2">
+                    <Download className="w-4 h-4 text-white/70 group-hover:text-red-400" />
+                  </div>
+                </div>
+              </div>
+
               {/* Syllabus Card */}
               <div className="p-5 rounded-3xl bg-[rgba(255,255,255,0.08)] backdrop-blur-2xl border border-[rgba(255,255,255,0.15)] shadow-lg">
                 <h2 className="text-lg font-bold text-white mb-5">课程大纲</h2>
@@ -555,6 +574,12 @@ export function AcademyPage({ onTabChange, onLoginClick, onHomeClick, onAIAssist
                   </div>
                 </div>
               </div>
+
+              {/* Next Lesson Button */}
+              <button className="w-full py-4 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 text-black font-extrabold text-lg shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2">
+                <span>下一节：人体微量元素检测与分析</span>
+                <ChevronRight className="w-5 h-5" />
+              </button>
             </div>
           </motion.div>
         )}

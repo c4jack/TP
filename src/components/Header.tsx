@@ -1,3 +1,5 @@
+import { Logo } from './Logo';
+
 interface Props {
   onLoginClick?: () => void;
   onHomeClick?: () => void;
@@ -15,11 +17,7 @@ export function Header({ onLoginClick, onHomeClick, showProfile, userAvatar, onP
         className="flex items-center gap-2 hover:opacity-80 hover:scale-105 transition-all cursor-pointer"
         title="返回主页"
       >
-        <img
-          alt="TP Logo"
-          className="h-8 w-8 object-contain rounded-full"
-          src="https://lh3.googleusercontent.com/aida/ADBb0uji5sZnHnwN0KPu9rCAxC11G1C2XdaKLtm3T4lbWWfWtDPf7kCMSInE7Nm8-g8UbVoFOjOuj1FF-iInLItQ3pN2o9AwLbxMAb2Edgz3-6eAuNFcuk2Lu5VaUZvOz8oy6OPyhFkks1bLhkSiKaje2kTojWkEl7-xQhkd0AfOlfXIVVQ3oD5ycY66MpfSIvLRu_0ma6MBxBpCMqCo8N0DvJqxhvwspKwOR93OiAfcI90MUf2CyRrv0ZBJZnCmMkgWJCUNYFj2q8O2Cw"
-        />
+        <Logo className="h-8 w-8 rounded-full" />
       </a>
       <nav className="hidden md:flex items-center gap-8">
         <a className="text-primary font-bold border-b-2 border-primary pb-1" href="#">
